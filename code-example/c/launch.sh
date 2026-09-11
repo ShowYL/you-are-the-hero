@@ -1,13 +1,16 @@
+#!/usr/bin/env bash
 
-case $1 in
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+case "$1" in
     "1")
-        gcc -o build/mainV1 mainV1.c && build/mainV1
+        gcc -o "$SCRIPT_DIR/build/mainV1" "$SCRIPT_DIR/mainV1.c" && "$SCRIPT_DIR/build/mainV1"
     ;;
     "2")
-        gcc -o build/mainV2 mainV2.c && build/mainV2
+        gcc -o "$SCRIPT_DIR/build/mainV2" "$SCRIPT_DIR/mainV2.c" && "$SCRIPT_DIR/build/mainV2"
     ;;
     "3")
-        gcc -o build/mainV3 mainV3.c && build/mainV3
+        gcc -o "$SCRIPT_DIR/build/mainV3" "$SCRIPT_DIR/mainV3.c" && "$SCRIPT_DIR/build/mainV3"
     ;;
     *)
         echo -e "No script with that number.\n"
