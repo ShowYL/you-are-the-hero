@@ -12,22 +12,25 @@ class Main {
     void main() {
         IO.println("Starting threads.");
 
-        var start = Instant.now();
+        Runnable[] list = { this::sequential, this::parallelism };
 
-        // parallelism();
-        // sequential();
+        for (var e : list) {
+            var start = Instant.now();
 
-        var end = Instant.now();
+            e.run();
 
-        IO.println(
-            "All threads finished in " +
-                Duration.between(start, end).toMillis() +
-                " ms"
-        );
+            var end = Instant.now();
+
+            IO.println(
+                "All threads finished in " +
+                    Duration.between(start, end).toMillis() +
+                    " ms"
+            );
+        }
     }
 
     void sequential() {
-        IO.println("Sequential");
+        IO.println("----- Sequential -----");
         for (int i = 0; i < amount; i++) {
             int randomNum = min + (int) (Math.random() * (max - min + 1));
 
@@ -37,7 +40,7 @@ class Main {
     }
 
     void parallelism() {
-        IO.println("parallelism");
+        IO.println("----- parallelism ----");
         var threads = new ArrayList<Thread>();
         for (int i = 0; i < amount; i++) {
             int randomNum = min + (int) (Math.random() * (max - min + 1));
