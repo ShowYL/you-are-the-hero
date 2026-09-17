@@ -45,6 +45,19 @@ Testez le comportement sans correction du code pour visualiser le mauvais compor
    `./go/bin/go run ./tp/2-exo.go`
 3. Exercice 3  
    `./go/bin/go run ./tp/3-exo.go`
+4. Exercice 4  
+   `./go/bin/go run ./tp/4-exo.go`
+
+### Bonus
+
+Pour ceux qui sont à l'aise, trois exercices un peu plus difficiles.
+
+5. Bonus 1  
+   `./go/bin/go run ./tp/5-bonus.go`
+6. Bonus 2  
+   `./go/bin/go run ./tp/6-bonus.go`
+7. Bonus 3 (canaux, voir la doc en tête du fichier)  
+   `./go/bin/go run ./tp/7-bonus.go`
 
 ## A noter
 
