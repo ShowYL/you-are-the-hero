@@ -9,9 +9,10 @@ import (
 const n = 5
 
 var fourchettes [n]sync.Mutex
+var serveur sync.Mutex
 var wg sync.WaitGroup
 
-// Faites en sorte que tous les philosophes mangent en rajoutant trois lignes de code.
+// Faites en sorte que tous les philosophes mangent en rajoutant deux lignes de code .
 
 func philosophe(id int) {
 	gauche, droite := id, (id+1)%n
