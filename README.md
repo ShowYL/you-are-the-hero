@@ -55,10 +55,8 @@ Pour ceux qui sont à l'aise, trois exercices un peu plus difficiles.
 
 5. Bonus 1  
    `./go/bin/go run ./tp/5-bonus.go`
-6. Bonus 2  
+6. Bonus 2 (canaux, voir la doc en tête du fichier)  
    `./go/bin/go run ./tp/6-bonus.go`
-7. Bonus 3 (canaux, voir la doc en tête du fichier)  
-   `./go/bin/go run ./tp/7-bonus.go`
 
 ## A noter
 

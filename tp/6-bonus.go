@@ -1,41 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
-)
+import "fmt"
 
-const n = 5
+// Un canal (chan) permet à deux threads de s'échanger des valeurs :
+//   ch <- v   	envoie v au canal ch 				(bloque tant que personne ne lit)
+//   v := <-ch 	lit ch et stocke la valeur dans v   (bloque tant que personne n'écrit)
+// Doc : https://go.dev/tour/concurrency/2
 
-var fourchettes [n]sync.Mutex
-var serveur sync.Mutex
-var wg sync.WaitGroup
+// Faites en sorte que le programme se termine en rajoutant une ligne de code.
 
-// Faites en sorte que tous les philosophes mangent en rajoutant deux lignes de code .
+var done = make(chan bool)
 
-func philosophe(id int) {
-	gauche, droite := id, (id+1)%n
-
-	for repas := 1; repas <= 3; repas++ {
-		fourchettes[gauche].Lock()
-		time.Sleep(10 * time.Millisecond)
-		fourchettes[droite].Lock()
-
-		fmt.Println("Philosophe", id, ": repas", repas)
-
-		fourchettes[droite].Unlock()
-		fourchettes[gauche].Unlock()
+func ping() {
+	for i := 0; i < 5; i++ {
+		fmt.Println("Ping", i)
 	}
-	wg.Done()
 }
 
 func main() {
-	wg.Add(n)
-	for id := 0; id < n; id++ {
-		go philosophe(id)
-	}
-	wg.Wait()
-
-	fmt.Println("Tout le monde a mangé")
+	go ping()
+	<-done
+	fmt.Println("Fin")
 }
