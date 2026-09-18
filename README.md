@@ -38,6 +38,7 @@ Ces codes de démonstration permettent de comprendre rapidement la syntaxe et le
 
 L'objectif des exercices est de corriger le mauvais comportement de programmation concurrente de chaque code go.
 Testez le comportement sans correction du code pour visualiser le mauvais comportement du code.
+Ensuite modifier le code pour rectifier le comportement du programme.
 
 1. Exercice 1  
    `./go/bin/go run ./tp/1-exo.go`
@@ -62,3 +63,8 @@ Pour ceux qui sont à l'aise, trois exercices un peu plus difficiles.
 ## A noter
 
 Par abus de langage nous allons appeler les coroutines de go des threads pour une question de simplification et de compréhension.
+
+## Documentation go
+
+Pour ceux qui souhaitent plus d'information sur le langage de programmation golang voici les liens de documentations :
+https://go.dev/tour/list

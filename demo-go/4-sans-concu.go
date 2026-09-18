@@ -2,10 +2,7 @@
 
 package main
 
-import (
-	"fmt"
-	"sync"
-)
+import "fmt"
 
 func say(word string) {
 	for i := 0; i < 10; i++ {
