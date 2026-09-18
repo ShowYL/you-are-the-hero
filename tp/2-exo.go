@@ -1,4 +1,5 @@
 package main
+
 import (
 	"sync"
 	"fmt"
@@ -31,5 +32,4 @@ func main () {
 	
 	fmt.Println("Attente de la fin d'exécution des deux fonctions ...")
 	wg.Wait()
-
 }
